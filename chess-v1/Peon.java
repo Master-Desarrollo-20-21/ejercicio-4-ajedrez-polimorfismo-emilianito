@@ -11,10 +11,6 @@ public class Peon extends Piece {
     @Override
     public boolean isValidMovement(Coord srcCoord, Coord dstCoord) {
 
-        IO io = new IO();
-        io.writeln(""+diff(srcCoord.row, dstCoord.row, srcCoord.color));
-        io.writeln(""+(srcCoord.col - dstCoord.col));
-
         if (diff(srcCoord.row, dstCoord.row, srcCoord.color) == 1
                 && srcCoord.col - dstCoord.col == 0
                 && dstCoord.color == Color.NONE) {
