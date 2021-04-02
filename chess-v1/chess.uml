@@ -1,0 +1,54 @@
+@startuml
+
+class Chess {
+  play()
+}
+
+class Player {
+  move()
+}
+
+class Turn {
+  take()
+  change()
+}
+
+
+class Board {
+  mate()
+  setPiece()
+  getPiece()
+  show()
+}
+
+class Coord {
+  read()
+}
+
+class Piece {
+  isValidMovement()
+}
+
+class Peon extends Piece{}
+
+class King extends Piece{}
+
+class Horse extends Piece{}
+
+Chess  *--> Turn
+Chess "2" *--> Player
+Chess  *--> Board
+
+Turn *--> Player
+
+Player --> Board
+Player --> Coord
+
+Board "52" *--> Piece
+Board --> Coord
+
+
+Piece --> Coord
+
+
+@enduml
